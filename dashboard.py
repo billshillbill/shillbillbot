@@ -18,7 +18,9 @@ for tweet in scheduled:
     st.text(tweet)
 
 # 🔧 Streamlit port binding for Railway (add at bottom)
-if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 8501))
-    os.system(f"streamlit run dashboard.py --server.port {port} --server.address 0.0.0.0")
+import os
+port = int(os.environ.get("PORT", 8501))
+
+st.write(f"Running on port {port}... (bound by Railway)")
+
+st.experimental_set_query_params(dummy=port)  # Hack to prevent Streamlit timeout
