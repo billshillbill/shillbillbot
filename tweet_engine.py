@@ -1,7 +1,10 @@
+# tweet_engine.py
+import requests
+
 def get_scheduled_tweets():
-    api_key = os.getenv("TYPEFULLY_API_KEY")
-    username = os.getenv("TYPEFULLY_USERNAME")
-    
+    api_key = "41xgmI4i7FCJaXDa"  # Typefully API key
+    username = "BillShillBill"    # Your Typefully username
+
     url = f"https://api.typefully.com/v0/users/{username}/tweets"
     headers = {
         "Authorization": f"Bearer {api_key}"
