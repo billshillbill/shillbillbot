@@ -16,3 +16,9 @@ st.header("📅 Scheduled Tweets")
 scheduled = get_scheduled_tweets()
 for tweet in scheduled:
     st.text(tweet)
+
+# 🔧 Streamlit port binding for Railway (add at bottom)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 8501))
+    os.system(f"streamlit run dashboard.py --server.port {port} --server.address 0.0.0.0")
