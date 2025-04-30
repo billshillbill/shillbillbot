@@ -17,3 +17,5 @@ def show_dashboard():
     scheduled = get_scheduled_tweets()
     for tweet in scheduled:
         st.text(tweet)
+# Call the dashboard render function
+show_dashboard()
